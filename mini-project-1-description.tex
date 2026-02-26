@@ -1,0 +1,98 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{charter}
+\usepackage[danish,english]{babel}
+\usepackage{graphicx, float, varioref, fancyvrb, array, mathtools, algorithm, algpseudocode, enumitem, url}
+\usepackage[a4paper,margin=2cm]{geometry}
+
+\setlist{noitemsep, topsep=0pt}
+
+\begin{document}
+
+\title{\vspace{-50pt} 02225 DRTS Mini-project 1 description (draft)}
+\author{}
+\date{}
+
+\maketitle
+
+\vspace{-20pt}
+This document describes the Mini-project 1 requirements for the 02225 Distributed Real-Time Systems (DRTS) course. The objective is to analyze and compare the schedulability and response times of periodic task sets (running on a single core) using different real-time scheduling algorithms.
+
+\section{Project Requirements}
+
+The students are required to develop their own software to perform the project activities. Any programming language and libraries may be used for the implementation. Guidance on the use of Generative AI is provided under ``Content/Course information''.
+
+The project requirements are defined at a high level:
+
+\begin{itemize}
+    \item Determine the worst-case response times (WCRTs) of a set of periodic real-time tasks. The analysis must consider:
+    \begin{itemize}
+        \item Deadline Monotonic (DM) scheduling.
+        \item Earliest Deadline First (EDF) scheduling.
+        \item Note: we consider the case when deadlines are smaller or equal to the periods.
+    \end{itemize}
+    \item Compare Deadline Monotonic (or Rate Monotonic) with EDF.
+    \item Compare the calculated WCRTs with response times observed during simulations. 
+\end{itemize}
+
+The students have the freedom to decide the comparison methodology between RM/DM and EDF, and the approach for comparing simulation results with worst-case behavior. 
+
+\section{Resources}
+
+\subsection*{Comparison and Methodology}
+\begin{itemize}
+    \item The lecture slides and course reading list provide the necessary theoretical background and comparison strategies.
+    \item ``Content/Mini-project-1'' contains suggestions for test cases and a test case generation tool.
+    \item The section ``What is a good project that will get a top grade?'' under ``Content/Course information'' on the course website discusses project evaluation criteria.
+\end{itemize}
+
+\subsection*{Theoretical References}
+The following sections from the Buttazzo course textbook \cite{buttazzo2024} are relevant:
+
+\paragraph{Deadline Monotonic (DM)}
+\begin{itemize}
+    \item Section 4.5: Deadline Monotonic.
+    \item Section 4.5.2: Response Time Analysis.
+    \item Figure 4.17: Algorithm for testing the schedulability of a periodic task set $\Gamma$ with the response time analysis.
+\end{itemize}
+
+\paragraph{Earliest Deadline First (EDF)}
+\begin{itemize}
+    \item Section 4.6: EDF with Deadlines Less Than Periods.
+    \item Section 4.6.1: The Processor Demand Approach (both from \cite{buttazzo2024}).
+    \item ``Rate Monotonic vs. EDF: Judgment Day`` paper \cite{buttazzo2005}.
+\end{itemize}
+
+\paragraph{Simulation}
+\begin{itemize}
+    \item Introduction to simulation and simulation slides (PDFs available in the Week 2 content tab).
+    \item Section 13.5.3: Scheduling Simulators (from \cite{buttazzo2024}).
+    \item Note: 
+    When you simulate, the execution time can be generated between the Best-Case Execution Time (BCET) and Worst-Case Execution Time (WCET).
+\end{itemize}
+
+\section{Potential Extensions}
+% (I will add details here)
+To be added.
+
+\bibliographystyle{plain}
+\begin{thebibliography}{1}
+
+\bibitem{buttazzo2024}
+Giorgio Buttazzo.
+\newblock {\em Hard Real-Time Computing Systems: Predictable Scheduling Algorithms and Applications}.
+\newblock Springer, 2024.
+
+\bibitem{buttazzo2005}
+Giorgio Buttazzo.
+\newblock {``Rate monotonic vs. EDF: Judgment day.''}
+\newblock {\em Real-Time Systems 29.1}.
+\newblock (2005): 5-26.
+
+\bibitem{simslides}
+Course Materials.
+\newblock {\em Introduction to Simulation} (book chapter) and {\em Simulation Slides}.
+\newblock Available under ``Content/week 2''.
+
+\end{thebibliography}
+
+\end{document}
